@@ -1,5 +1,6 @@
 import { getGuests, addGuest, deleteGuestById } from './services/guests';
+import Home from '../src/views/home/Home';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <Home />;
 }
