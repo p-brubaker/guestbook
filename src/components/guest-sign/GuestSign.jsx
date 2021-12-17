@@ -1,22 +1,25 @@
 import './GuestSign.css';
 import { useState } from 'react';
+import { useUser } from '../../context/UserContext';
 
-export default function GuestSign() {
-  const name = 'Joe'; // replace with value from context
+export default function GuestSign({ addGuest }) {
+  const { user, setUser } = useUser(null);
   const [entryInput, setEntryInput] = useState('');
   const [nameInput, setNameInput] = useState('');
 
-  function handleSign() {
-    // replace with call to set context
-  }
-  function handleChangeName() {
-    // replace with call to set context
+  async function handleSign() {
+    addGuest({ name: nameInput, entry: entryInput });
+    setUser(nameInput);
   }
 
-  if (name) {
+  async function handleChangeName() {
+    setUser(null);
+  }
+
+  if (user) {
     return (
       <div className="guest-sign-container">
-        <p>Thanks for Signing {name}!</p>
+        <p>Thanks for Signing {user}!</p>
         <label htmlFor="guest-entry">Guest Entry</label>
         <input
           name="guest-entry"
@@ -25,7 +28,7 @@ export default function GuestSign() {
           onChange={(e) => setEntryInput(e.target.value)}
         />
         <button onClick={handleSign}>Sign</button>
-        <button onClick={handleChangeName}>Not {name}?</button>
+        <button onClick={handleChangeName}>Not {user}?</button>
       </div>
     );
   } else {
