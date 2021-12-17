@@ -8,8 +8,8 @@ export default function GuestSign({ addGuest }) {
   const [nameInput, setNameInput] = useState('');
 
   async function handleSign() {
-    addGuest({ name: nameInput, entry: entryInput });
-    setUser(nameInput);
+    await addGuest({ name: nameInput || user.name, entry: entryInput });
+    if (!user) setUser(nameInput);
   }
 
   async function handleChangeName() {
