@@ -1,5 +1,4 @@
 import { createContext, useState, useContext, useEffect } from 'react';
-import { getGuests, addGuest, deleteGuestById } from '../services/guests';
 
 const UserContext = createContext();
 
