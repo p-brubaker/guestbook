@@ -1,12 +1,22 @@
+import { useState, useEffect } from 'react';
+import { getGuests, addGuest } from '../../services/guests';
 import './Home.css';
 import GuestSign from '../../components/guest-sign/GuestSign';
 import Entries from '../../components/entries/Entries';
 
 export default function Home() {
-  return (
+  const [guests, setGuests] = useState(null);
+
+  useEffect(() => {
+    getGuests().then((res) => setGuests(res));
+  }, []);
+
+  return guests ? (
     <div className="home">
       <GuestSign />
-      <Entries />
+      <Entries guests={guests} />
     </div>
+  ) : (
+    <p>Loading...</p>
   );
 }
