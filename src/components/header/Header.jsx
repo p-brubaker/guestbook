@@ -1,12 +1,17 @@
 import './Header.css';
 import React from 'react';
+import { useUser } from '../../context/UserContext';
 
 export default function Header() {
-  const name = 'Friend'; // replace with value from context
+  const { user } = useUser();
 
-  return (
+  return user ? (
     <div className="header">
-      <p>Sign in {name}!</p>
+      <p>Thanks for signing in {user}!</p>
+    </div>
+  ) : (
+    <div className="header">
+      <p>Sign in Friend!</p>
     </div>
   );
 }
