@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getGuests, addGuest } from '../../services/guests';
 import { useUser } from '../../context/UserContext';
 import './Home.css';
@@ -17,7 +17,7 @@ export default function Home() {
     const newGuest = await addGuest({ name, entry });
     setGuests((prev) => [
       ...prev,
-      { name: newGuest[0].name, entry: newGuest[0].entry },
+      { name: newGuest[0].name, entry: newGuest[0].entry, id: newGuest[0].id },
     ]);
   }
 

@@ -1,4 +1,5 @@
 import './GuestSign.css';
+import React from 'react'
 import { useState } from 'react';
 import { useUser } from '../../context/UserContext';
 
@@ -10,10 +11,14 @@ export default function GuestSign({ addGuest }) {
   async function handleSign() {
     await addGuest({ name: nameInput || user.name, entry: entryInput });
     if (!user) setUser(nameInput);
+    setEntryInput('');
+    setNameInput('');
   }
 
   async function handleChangeName() {
     setUser(null);
+    setNameInput('');
+    setEntryInput('');
   }
 
   if (user) {

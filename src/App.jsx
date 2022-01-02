@@ -1,4 +1,4 @@
-import { getGuests, addGuest, deleteGuestById } from './services/guests';
+import React from 'react';
 import Home from '../src/views/home/Home';
 import { UserProvider } from './context/UserContext';
 
