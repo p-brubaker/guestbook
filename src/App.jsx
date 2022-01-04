@@ -6,9 +6,6 @@ import PrivateRoute from './components/private-route/PrivateRoute';
 
 export default function App() {
   return (
-    // <UserProvider>
-    //   <Home />
-    // </UserProvider>
     <Router>
       <Switch>
         <Route path="/login">
