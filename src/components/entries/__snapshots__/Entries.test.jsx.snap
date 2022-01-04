@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the Entries component 1`] = `
+<div>
+  <div
+    class="entries-container"
+  >
+    <div
+      class="entry"
+    >
+      <p>
+        Blob
+      </p>
+      <p>
+        Hi!
+      </p>
+    </div>
+  </div>
+</div>
+`;

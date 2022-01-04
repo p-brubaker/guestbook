@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the GuestSign component 1`] = `
+<div>
+  <div
+    class="guest-sign-container"
+  >
+    <p>
+      Please Sign the Guestbook!
+    </p>
+    <label
+      for="guest-name"
+    >
+      Guest Name
+    </label>
+    <input
+      id="guest-name"
+      name="guest-name"
+      value=""
+    />
+    <label
+      for="guest-entry"
+    >
+      Guest Entry
+    </label>
+    <input
+      id="guest-entry"
+      name="guest-entry"
+      value=""
+    />
+    <button>
+      Sign
+    </button>
+  </div>
+</div>
+`;
