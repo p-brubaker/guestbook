@@ -12,6 +12,7 @@ const env = Object.entries({
   acc[key] = value;
   return acc;
 }, {});
+console.log(process.env);
 
 // eslint-disable-next-line
 module.exports = {
